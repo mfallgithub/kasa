@@ -12,6 +12,8 @@ const NavContainer = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 1200px;
+  padding-left: 320px;
 `;
 function Header() {
   return (
@@ -19,10 +21,10 @@ function Header() {
       <Link to="/">
         <KasaLogo src={Logo} />
       </Link>
-      <div>
+        <div>
         <HomeStyledLink to="/">Accueil</HomeStyledLink>
         <PropoStyledLink to="/propos">A Propos</PropoStyledLink>
-      </div>
+        </div>
     </NavContainer>
   );
 }

@@ -1,15 +1,18 @@
 import styled from "styled-components";
-import HomeImageAccueil from '../../assets/imageaccueil.png'
+import HomeImageAccueil from '../../assets/imageaccueil1.png';
+import Card from "../../components/Card";
 const HomeWrapper =styled.div `
   display: flex;
   justify-content: center;
 `
+// <ImageTitle>Chez vous, partout et ailleurs</ImageTitle>
 const HomerContainer = styled.div`
   margin: 30px;
   padding: 60px 90px;
   display: flex;
   flex-direction: row;
   max-width: 1200px;
+  //padding-left: 320px;
 `
 const ImageAccueil =styled.img `
  border-radius: 25px;
@@ -22,25 +25,34 @@ const ImageAccueil =styled.img `
  opacity: 1;
  background: #E5E5E5;
 `
-const ImageTitle = styled.h2`
-font-family: 'Montserrat';
-line-height: 142.6%;
-position: absolute;
-font-style: normal;
-font-weight: 500;
-font-size: 48px;
-display: flex;
-align-items: flex-end;
-color: #FFFFFF;
-justify-content: center;
+const CardsContainer = styled.div`
+  display: grid;
+  gap: 24px;
+  grid-template-rows: 350px 350px;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: center;
+  border-radius: 10px;
 `
+
+
+var locations = require("../../data/logements.json");
+
 function Home() {
   return (
    <HomeWrapper>
      <HomerContainer>
         <ImageAccueil src={HomeImageAccueil}/>
-        <ImageTitle>Chez vous, partout et ailleurs</ImageTitle>
-     </HomerContainer>
+     </HomerContainer><br/>
+     <CardsContainer>
+        {locations.map((location, index) => (
+          <Card
+            key={`${location.id}-${index}`}
+            title={location.title}
+            cover={location.cover}
+          />
+        ))}
+      </CardsContainer>
    </HomeWrapper>
   );
 }
