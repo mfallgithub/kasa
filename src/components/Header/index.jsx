@@ -5,26 +5,27 @@ import { HomeStyledLink } from "../../utils/style/Home/index";
 import { PropoStyledLink } from "../../utils/style/Propos/index";
 
 const KasaLogo = styled.img`
-  height: 70px;
+  height: 40px;
 `;
 const NavContainer = styled.nav`
   padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1200px;
-  padding-left: 320px;
-`;
+  width: 1150px;
+  padding-left: 250px;
+`
+
 function Header() {
   return (
     <NavContainer>
       <Link to="/">
         <KasaLogo src={Logo} />
       </Link>
-        <div>
+      <div>
         <HomeStyledLink to="/">Accueil</HomeStyledLink>
         <PropoStyledLink to="/propos">A Propos</PropoStyledLink>
-        </div>
+      </div>
     </NavContainer>
   );
 }
