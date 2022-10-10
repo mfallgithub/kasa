@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import HomeImageAccueil from "../../assets/imageaccueil1.png";
 import Card from "../../components/Card";
+
+
 const HomeWrapper = styled.div`
   display: flex;
   justify-content: center;
 `;
-// <ImageTitle>Chez vous, partout et ailleurs</ImageTitle>
 const HomerContainer = styled.div`
   margin: 30px;
   padding: 60px 90px;
