@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 import Propos from "./pages/Apropos";
+import Error from "./components/Error";
 const GlobalStyle = createGlobalStyle`
     div {
         font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -23,8 +24,11 @@ ReactDOM.render(
         <Route path="/propos">
           <Propos />
         </Route>
+        <Route>
+          <Error />
+        </Route>
       </Switch>
     </Router>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );

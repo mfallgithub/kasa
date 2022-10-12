@@ -38,6 +38,7 @@ const ButtonStyled = styled.button`
 
 
 const PanelHeading = styled.div`
+  color: white;
   padding: 100px 20px;
   padding-left: 890px;
   display: flex;
@@ -67,8 +68,8 @@ const Collapsible = (props) => {
     <div>
       <ButtonStyled onClick={toggle}>
         {props.label}
-          <PanelHeading onClick={togglePanel}>
-            <ToggleButtonWrapper isCollapsed={isCollapsed}>
+          <PanelHeading>
+            <ToggleButtonWrapper onClick={togglePanel} isCollapsed={isCollapsed}>
               <FontAwesomeIcon icon={faChevronCircleDown} />
             </ToggleButtonWrapper>
           </PanelHeading>

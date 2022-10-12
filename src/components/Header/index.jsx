@@ -6,15 +6,18 @@ import { PropoStyledLink } from "../../utils/style/Propos/index";
 
 const KasaLogo = styled.img`
   height: 40px;
+  padding-left: 150px;
 `;
 const NavContainer = styled.nav`
   padding: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1150px;
+  width: 1100px;
   padding-left: 250px;
-`
+  width: 1240px;
+  padding-left: 100px;
+`;
 
 function Header() {
   return (
