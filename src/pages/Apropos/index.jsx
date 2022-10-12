@@ -2,7 +2,6 @@ import styled from "styled-components";
 import ProposImageAccueil from "../../assets/apropos.png";
 import Collapsible from "./collapse";
 import "../../utils/style/Propos/css/Collapsible.css";
-
 const ProposWrapper = styled.div`
   display: grid;
   justify-content: center;
@@ -13,7 +12,7 @@ const ProposContainer = styled.div`
   padding: 60px 90px;
   display: grid;
   flex-direction: row;
-  max-width: 1200px;
+  width: 1023px;
 `;
 const ProposAccueil = styled.img`
   border-radius: 25px;
@@ -35,48 +34,43 @@ const ContainerCollapses = styled.div`
   align-items: center;
 `;
 
+
 function Propos() {
   return (
     <ProposWrapper>
       <ProposContainer>
         <ProposAccueil src={ProposImageAccueil} />
-        <ContainerCollapses className="Collapsible">
+        <ContainerCollapses>
           <Collapsible label="Fiabilité">
-            <h1>Fiabilité</h1>
-            <p>
-              The collapsible component puts long sections of the information
-              under a block enabling users to expand or collapse to access its
-              details.
-            </p>
+              Les annonces postées sur Kasa garantissent une fiabilité totale.
+              Les photos sont conformes aux logements, et toutes les
+              informations sont régulièrement vérifiées par nos équipes.
           </Collapsible>
           <hr />
           <Collapsible label="Respect">
-            <h1>Prerequisite</h1>
             <p>
-              I am going to assume that you know the basics like how a component
-              works, how useState works, and how to set up React. I will only
-              focus on building the project and though this is for an absolute
-              beginner who would like to know how useEffect and useRef work.
+              La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
+              comportement discriminatoire ou de perturbation du voisinage
+              entraînera une exclusion de notre plateforme.
             </p>
           </Collapsible>
           <hr />
           <Collapsible label="Service">
-            <h1>Service</h1>
             <p>
-              This article will teach you more about the useState hook, useRef
-              hook, and animation in React; we will make simple React
-              collapsible components, useful for all kinds of apps. This
-              collapsible element can be shown or hidden by clicking a button.
+              Nos équipes se tiennent à votre disposition pour vous fournir une
+              expérience parfaite. N'hésitez pas à nous contacter si vous avez
+              la moindre question.
             </p>
           </Collapsible>
           <hr />
-          <Collapsible label="Responsabilité">
-            <h1>Responsabilité</h1>
+          <Collapsible label="Sécurité">
             <p>
-              I am going to assume that you know the basics like how a component
-              works, how useState works, and how to set up React. I will only
-              focus on building the project and though this is for an absolute
-              beginner who would like to know how useEffect and useRef work.
+              La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
+              pour les voyageurs, chaque logement correspond aux critères de
+              sécurité établis par nos services. En laissant une note aussi bien
+              à l'hôte qu'au locataire, cela permet à nos équipes de vérifier
+              que les standards sont bien respectés. Nous organisons également
+              des ateliers sur la sécurité domestique pour nos hôtes.
             </p>
           </Collapsible>
           <hr />
