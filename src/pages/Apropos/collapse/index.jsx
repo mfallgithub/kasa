@@ -1,91 +1,82 @@
-import { useState, useRef } from "react";
+import React from "react";
 import styled from "styled-components";
+// 1
+import useMeasure from "react-use-measure";
+import { useSpring, animated } from "react-spring";
+/*
+//Import pour des icone fontAwasome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";
-
+import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";*/
+import faChevronCircleDownImage from "../../../assets/iconcollapse.png";
 const ContentParent = styled.div`
-  height: 0px;
-  overflow: hidden;
-  transition: height ease 0.9s;
-  background: white;
-`;
-
-const Content = styled.div`
-  padding: 0.5rem;
-  border-radius: 5px;
-  width: 1000px;
-  color: #ff6060;
-`;
-
-const ButtonStyled = styled.button`
-  border: hidden;
   width: 1023px;
   background: #ff6060;
-  height: 47px;
   border-radius: 5px;
-  font-family: "Montserrat";
-  font-style: normal;
   font-weight: 500;
   font-size: 24px;
   line-height: 142.6%;
-  /* or 34px */
-
-  display: flex;
-  align-items: center;
-  color: #ffffff;
 `;
 
-
-
-const PanelHeading = styled.div`
-  color: white;
-  padding: 100px 20px;
-  padding-left: 890px;
+const ContentHeading = styled.div`
+  background-color: #ff6060;
+  color: #ffffff;
+  padding: 5px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   cursor: pointer;
+  border-radius: 5px;
+`;
+//le contenu du collapse
+const Content = styled(animated.div)`
+  border: none;
+  border-top: none;
+  padding: 0px 20px;
+  display: flex;
+  align-items: center;
+  color: #ff6060;
+  background: #f7f7f7;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 24px;
 `;
 
-const ToggleButtonWrapper = styled.div`
-  transform: ${(props) =>
-    props.isCollapsed ? "rotate(0deg)" : "rotate(180deg)"};
+const ContentInner = styled.div`
+  padding: 20px 0;
+`;
+const ImageIcon=styled.img`
+
 `;
 
-const Collapsible = (props) => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
+const Collapse = (props) => {
+  const [isCollapsed, setIsCollapsed] = React.useState(true);
 
-  const togglePanel = () => {
+  const [ref, bounds] = useMeasure();
+
+  const toggleWrapperAnimatedStyle = useSpring({
+    transform: isCollapsed ? "rotate(0deg)" : "rotate(180deg)",
+  });
+  const ContentAnimatedStyle = useSpring({
+    height: isCollapsed ? 0 : bounds.height,
+  });
+
+  const toggle = () => {
     setIsCollapsed((prevState) => !prevState);
   };
 
-  const [open, setOpen] = useState(false);
-  const toggle = () => {
-    setOpen(!open);
-  };
-  const contentRef = useRef();
   return (
-    <div>
-      <ButtonStyled onClick={toggle}>
+    <ContentParent>
+      <ContentHeading onClick={toggle}>
         {props.label}
-          <PanelHeading>
-            <ToggleButtonWrapper onClick={togglePanel} isCollapsed={isCollapsed}>
-              <FontAwesomeIcon icon={faChevronCircleDown} />
-            </ToggleButtonWrapper>
-          </PanelHeading>
-      </ButtonStyled>
-      <ContentParent
-        ref={contentRef}
-        style={
-          open
-            ? { height: contentRef.current.scrollHeight + "px" }
-            : { height: "0px" }
-        }
-      >
-        <Content>{props.children}</Content>
-      </ContentParent>
-    </div>
+        <animated.div style={toggleWrapperAnimatedStyle}>
+          <ImageIcon src={faChevronCircleDownImage} alt="image of icon" />
+        </animated.div>
+      </ContentHeading>
+      <Content style={ContentAnimatedStyle}>
+        <ContentInner ref={ref}>{props.children}</ContentInner>
+      </Content>
+    </ContentParent>
   );
 };
 
-export default Collapsible;
+export default Collapse;

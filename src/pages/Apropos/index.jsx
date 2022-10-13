@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import ProposImageAccueil from "../../assets/apropos.png";
-import Collapsible from "./collapse";
 import "../../utils/style/Propos/css/Collapsible.css";
+import Collapse from "./collapse";
 const ProposWrapper = styled.div`
   display: grid;
   justify-content: center;
@@ -34,36 +34,35 @@ const ContainerCollapses = styled.div`
   align-items: center;
 `;
 
-
 function Propos() {
   return (
     <ProposWrapper>
       <ProposContainer>
         <ProposAccueil src={ProposImageAccueil} />
         <ContainerCollapses>
-          <Collapsible label="Fiabilité">
-              Les annonces postées sur Kasa garantissent une fiabilité totale.
-              Les photos sont conformes aux logements, et toutes les
-              informations sont régulièrement vérifiées par nos équipes.
-          </Collapsible>
+          <Collapse label="Fiabilité">
+            Les annonces postées sur Kasa garantissent une fiabilité totale. Les
+            photos sont conformes aux logements, et toutes les informations sont
+            régulièrement vérifiées par nos équipes.
+          </Collapse>
           <hr />
-          <Collapsible label="Respect">
+          <Collapse label="Respect">
             <p>
               La bienveillance fait partie des valeurs fondatrices de Kasa. Tout
               comportement discriminatoire ou de perturbation du voisinage
               entraînera une exclusion de notre plateforme.
             </p>
-          </Collapsible>
+          </Collapse>
           <hr />
-          <Collapsible label="Service">
+          <Collapse label="Service">
             <p>
               Nos équipes se tiennent à votre disposition pour vous fournir une
               expérience parfaite. N'hésitez pas à nous contacter si vous avez
               la moindre question.
             </p>
-          </Collapsible>
+          </Collapse>
           <hr />
-          <Collapsible label="Sécurité">
+          <Collapse label="Responsabilité">
             <p>
               La sécurité est la priorité de Kasa. Aussi bien pour nos hôtes que
               pour les voyageurs, chaque logement correspond aux critères de
@@ -72,8 +71,7 @@ function Propos() {
               que les standards sont bien respectés. Nous organisons également
               des ateliers sur la sécurité domestique pour nos hôtes.
             </p>
-          </Collapsible>
-          <hr />
+          </Collapse>
         </ContainerCollapses>
       </ProposContainer>
     </ProposWrapper>
