@@ -49,19 +49,19 @@ const ImageIcon=styled.img`
 `;
 
 const Collapse = (props) => {
-  const [isCollapsed, setIsCollapsed] = React.useState(true);
+  const [open, setOpen] = React.useState(true);
 
   const [ref, bounds] = useMeasure();
 
   const toggleWrapperAnimatedStyle = useSpring({
-    transform: isCollapsed ? "rotate(0deg)" : "rotate(180deg)",
+    transform: open ? "rotate(0deg)" : "rotate(180deg)",
   });
   const ContentAnimatedStyle = useSpring({
-    height: isCollapsed ? 0 : bounds.height,
+    height: open ? 0 : bounds.height,
   });
 
   const toggle = () => {
-    setIsCollapsed((prevState) => !prevState);
+    setOpen(!open);
   };
 
   return (

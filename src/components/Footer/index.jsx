@@ -10,6 +10,8 @@ const FooterContainer = styled.div`
   margin-top: 70px;
   padding-top: 50px;
   padding-bottom: 50px;
+
+  height: 80px;
 `;
 
 const FooterLogo = styled.img`

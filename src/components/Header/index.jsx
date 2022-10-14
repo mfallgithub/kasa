@@ -9,7 +9,7 @@ const KasaLogo = styled.img`
   padding-left: 150px;
 `;
 const NavContainer = styled.nav`
-  padding: 30px;
+  padding-top: 2px;
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -24,9 +24,7 @@ const Illustration = styled.img`
   top: 0px;
   border-radius: nullpx;
 `;
-const LinkReturn = styled.div`
-
-
+const LinkReturn = styled.a`
   display: flex;
   align-items: flex-end;
   text-decoration-line: underline;
@@ -40,7 +38,7 @@ function Error() {
       <ErrorSubtitle>
         Oups! La page que vous demandez n'existe pas.
       </ErrorSubtitle>
-      <LinkReturn>Retourner sur la page d'accueil</LinkReturn>
+      <LinkReturn href="/">Retourner sur la page d'accueil</LinkReturn>
     </ErrorWrapper>
   );
 }
