@@ -7,6 +7,7 @@ import { createGlobalStyle } from "styled-components";
 import Propos from "./pages/Apropos";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
+import Accommodation from "./pages/logements";
 const GlobalStyle = createGlobalStyle`
     div {
         font-family: 'Trebuchet MS', Helvetica, sans-serif;
@@ -24,6 +25,9 @@ ReactDOM.render(
         </Route>
         <Route path="/propos">
           <Propos />
+        </Route>
+        <Route path="/logement">
+           <Accommodation />
         </Route>
         <Route>
           <Error />

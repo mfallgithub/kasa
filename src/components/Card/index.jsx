@@ -2,6 +2,11 @@ import propTypes from "prop-types";
 import styled from "styled-components";
 import colors from "../../utils/style/colors";
 
+const LinkAccommadation = styled.a`
+  display: grid;
+  color: white;
+  text-decoration-line: none;
+`;
 const CardTitle = styled.span`
   color: #ffffff;
   font-size: 18px;
@@ -38,10 +43,12 @@ const CardWrapper = styled.div`
 
 function Card({ title, cover }) {
   return (
+    <LinkAccommadation href="/logement">
     <CardWrapper>
-      <CardImage src={cover} alt="location"/>
-      <CardTitle>{title}</CardTitle>
+        <CardImage src={cover} alt="location" />
+        <CardTitle>{title}</CardTitle>
     </CardWrapper>
+    </LinkAccommadation>
   );
 }
 Card.propTypes = {

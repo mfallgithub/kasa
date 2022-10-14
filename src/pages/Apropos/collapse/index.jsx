@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-// 1
 import useMeasure from "react-use-measure";
 import { useSpring, animated } from "react-spring";
-/*
-//Import pour des icone fontAwasome
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronCircleDown } from "@fortawesome/free-solid-svg-icons";*/
 import faChevronCircleDownImage from "../../../assets/iconcollapse.png";
+
+
 const ContentParent = styled.div`
   width: 1023px;
   background: #ff6060;
